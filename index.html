@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
@@ -18,13 +19,13 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
             padding: 20px 0;
@@ -35,13 +36,13 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
@@ -50,7 +51,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .beta-badge {
             background: linear-gradient(45deg, #ff006e, #8338ec);
             color: white;
@@ -62,19 +63,28 @@
             letter-spacing: 1px;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.9; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 80px 0;
             text-align: center;
             position: relative;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -86,12 +96,19 @@
             transform: translateX(-50%);
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
@@ -102,7 +119,7 @@
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 40px;
@@ -111,7 +128,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, #00f5ff, #ff006e);
@@ -126,7 +143,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -137,22 +154,22 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0, 245, 255, 0.4);
         }
-        
+
         /* Features Section */
         .features {
             padding: 100px 0;
             background: rgba(0, 0, 0, 0.2);
         }
-        
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -160,14 +177,14 @@
             margin-bottom: 60px;
             color: #ffffff;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
-        
+
         .feature-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
             padding: 40px;
@@ -178,7 +195,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .feature-card::before {
             content: '';
             position: absolute;
@@ -190,46 +207,46 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
-        
+
         .feature-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 20px;
             display: block;
         }
-        
+
         .feature-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
             color: #ffffff;
         }
-        
+
         .feature-card p {
             color: #b8b8b8;
             font-size: 1.1rem;
         }
-        
+
         .benefit-list {
             list-style: none;
             margin-top: 20px;
         }
-        
+
         .benefit-list li {
             color: #b8b8b8;
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
         }
-        
+
         .benefit-list li::before {
             content: '✓';
             position: absolute;
@@ -237,20 +254,20 @@
             color: #00f5ff;
             font-weight: bold;
         }
-        
+
         /* Stats Section */
         .stats {
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-top: 40px;
         }
-        
+
         .stat-item h3 {
             font-size: 3rem;
             font-weight: 800;
@@ -260,19 +277,19 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-        
+
         .stat-item p {
             color: #b8b8b8;
             font-size: 1.1rem;
         }
-        
+
         /* Signup Section */
         .signup {
             padding: 100px 0;
             background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 110, 0.1));
             text-align: center;
         }
-        
+
         .signup-form {
             max-width: 500px;
             margin: 0 auto;
@@ -282,19 +299,19 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
-        
+
         .form-group {
             margin-bottom: 25px;
             text-align: left;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: #ffffff;
         }
-        
+
         .form-group input,
         .form-group select {
             width: 100%;
@@ -306,19 +323,19 @@
             font-size: 16px;
             transition: all 0.3s ease;
         }
-        
+
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
             border-color: #00f5ff;
             box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
         }
-        
+
         .form-group select option {
             background: #1a1a2e;
             color: #ffffff;
         }
-        
+
         .submit-btn {
             width: 100%;
             background: linear-gradient(45deg, #00f5ff, #ff006e);
@@ -331,12 +348,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
         }
-        
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -344,43 +361,43 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(0, 0, 0, 0.3);
         }
-        
+
         footer p {
             color: #888;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .container {
                 padding: 0 15px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .signup-form {
                 margin: 0 10px;
                 padding: 30px 20px;
@@ -388,6 +405,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -402,7 +420,8 @@
         <section class="hero">
             <div class="container">
                 <h1>Where Ideas Meet Influence</h1>
-                <p>The revolutionary platform connecting creative minds with content creators. Turn your brilliant AI prompt ideas into viral content and recognition.</p>
+                <p>The revolutionary platform connecting creative minds with content creators. Turn your brilliant AI
+                    prompt ideas into viral content and recognition.</p>
                 <a href="#signup" class="cta-button">Join the Revolution</a>
             </div>
         </section>
@@ -414,7 +433,8 @@
                     <div class="feature-card">
                         <span class="feature-icon">🚀</span>
                         <h3>For Content Creators</h3>
-                        <p>Never run out of viral content ideas again. Access a curated library of AI prompts designed to boost engagement and grow your following.</p>
+                        <p>Never run out of viral content ideas again. Access a curated library of AI prompts designed
+                            to boost engagement and grow your following.</p>
                         <ul class="benefit-list">
                             <li>Endless content inspiration</li>
                             <li>AI-optimized prompts for all platforms</li>
@@ -422,11 +442,12 @@
                             <li>Stay ahead of trends</li>
                         </ul>
                     </div>
-                    
+
                     <div class="feature-card">
                         <span class="feature-icon">💡</span>
                         <h3>For Creative Minds</h3>
-                        <p>Got brilliant ideas but no platform? Share your creative AI prompts and get recognition when influencers use them to create viral content.</p>
+                        <p>Got brilliant ideas but no platform? Share your creative AI prompts and get recognition when
+                            influencers use them to create viral content.</p>
                         <ul class="benefit-list">
                             <li>Get credit for your creativity</li>
                             <li>Build your personal brand</li>
@@ -466,14 +487,15 @@
         <section class="signup" id="signup">
             <div class="container">
                 <h2 class="section-title">Be Among the First to Join</h2>
-                <p style="font-size: 1.2rem; color: #b8b8b8; margin-bottom: 40px;">PromptExchange is currently in development. Join our waitlist to get exclusive early access and be notified when we launch!</p>
-                
+                <p style="font-size: 1.2rem; color: #b8b8b8; margin-bottom: 40px;">PromptExchange is currently in
+                    development. Join our waitlist to get exclusive early access and be notified when we launch!</p>
+
                 <form class="signup-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required placeholder="your@email.com">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="userType">How would you like to use PromptExchange?</label>
                         <select id="userType" name="userType" required>
@@ -483,7 +505,7 @@
                             <option value="both">Both - I create content and have ideas to share</option>
                         </select>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">Join the Waitlist</button>
                 </form>
             </div>
@@ -497,20 +519,25 @@
     </footer>
 
     <script>
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault();
-            
+
             const email = document.getElementById('email').value;
             const userType = document.getElementById('userType').value;
-            
-            // Here you would typically send this data to your backend
-            console.log('Form submitted:', { email, userType });
-            
-            // Show success message
-            alert('Thank you for joining our waitlist! We\'ll notify you as soon as PromptExchange launches.');
-            
-            // Reset form
-            event.target.reset();
+
+            const res = await fetch('api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, userType })
+            });
+            if (res.ok) {
+                location.href = '/thanks.html';
+            }
+            else {
+                alert('Unexpected error occured. Please try again later');
+                // Reset form
+                event.target.reset();
+            }
         }
 
         // Smooth scrolling for anchor links
@@ -524,4 +551,5 @@
         });
     </script>
 </body>
+
 </html>
