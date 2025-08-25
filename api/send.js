@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Waitlist <no-reply@prioplotgames.com>',
+        from: 'PrioplotGames <no-reply@prioplotgames.com>',
         to: ['anpojda@gmail.com'],
         subject: 'New waitlist application',
         html: `<p>Newcomer email: ${email}; User type: ${userType}</p>`
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Waitlist <no-reply@prioplotgames.com>',
+        from: 'PrioplotGames <no-reply@prioplotgames.com>',
         to: [email],
         subject: 'You were added to the waitlist!',
         html: '<p>Thank you for joining our waitlist! We\'ll notify you as soon as PromptExchange launches.</p>'
