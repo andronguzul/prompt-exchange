@@ -354,6 +354,30 @@
             box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
         }
 
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            width: 35px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background:
+                radial-gradient(farthest-side, #ffffff 94%, #0000) top/8px 8px no-repeat,
+                conic-gradient(#0000 30%, #ffffff);
+            mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+            -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+            animation: l13 1s infinite linear;
+            margin: auto;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        @keyframes l13 {
+            100% {
+                transform: rotate(1turn)
+            }
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -506,7 +530,10 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="submit-btn">Join the Waitlist</button>
+                    <button type="submit" class="submit-btn" id="submit-button">
+                        <p id="submit-button-text">Join the Waitlist</p>
+                        <div id="submit-button-loader" class="invisible"></div>
+                    </button>
                 </form>
             </div>
         </section>
@@ -522,6 +549,8 @@
         async function handleSubmit(event) {
             event.preventDefault();
 
+            handleLoading(true);
+
             const email = document.getElementById('email').value;
             const userType = document.getElementById('userType').value;
 
@@ -530,6 +559,9 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, userType })
             });
+
+            handleLoading(false);
+
             if (res.ok) {
                 location.href = '/thanks.html';
             }
@@ -538,6 +570,16 @@
                 // Reset form
                 event.target.reset();
             }
+        }
+
+        function handleLoading(isLoading = false)
+        {
+            const submitButton = document.getElementById('submit-button');
+            submitButton.disabled = isLoading;
+            const submitButtonText = document.getElementById('submit-button-text');
+            submitButtonText.className = isLoading ? 'invisible' : '';
+            const submitButtonLoader = document.getElementById('submit-button-loader');
+            submitButtonLoader.className = isLoading ? 'loader' : 'invisible';
         }
 
         // Smooth scrolling for anchor links
