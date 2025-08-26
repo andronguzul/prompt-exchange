@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11495243374"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11495243374');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to PromptExchange - Thank You!</title>
@@ -10,7 +20,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
@@ -21,13 +31,13 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header */
         header {
             padding: 20px 0;
@@ -35,13 +45,13 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
@@ -50,7 +60,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .beta-badge {
             background: linear-gradient(45deg, #ff006e, #8338ec);
             color: white;
@@ -61,7 +71,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         /* Main Content */
         .main-content {
             flex: 1;
@@ -70,7 +80,7 @@
             justify-content: center;
             padding: 60px 0;
         }
-        
+
         .thank-you-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             padding: 60px 40px;
@@ -83,7 +93,7 @@
             max-width: 600px;
             width: 100%;
         }
-        
+
         .thank-you-card::before {
             content: '';
             position: absolute;
@@ -94,25 +104,43 @@
             background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.1), transparent, rgba(255, 0, 110, 0.1), transparent);
             animation: shimmer 3s linear infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(30deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(30deg);
+            }
         }
-        
+
         .success-icon {
             font-size: 4rem;
             margin-bottom: 30px;
             display: inline-block;
             animation: bounce 2s ease-in-out infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
         }
-        
+
         .thank-you-card h1 {
             font-size: 2.8rem;
             font-weight: 800;
@@ -124,7 +152,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .thank-you-card p {
             font-size: 1.3rem;
             color: #b8b8b8;
@@ -132,12 +160,12 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .highlight-text {
             color: #00f5ff;
             font-weight: 600;
         }
-        
+
         .next-steps {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
@@ -147,19 +175,19 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .next-steps h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             color: #ffffff;
         }
-        
+
         .steps-list {
             list-style: none;
             text-align: left;
         }
-        
+
         .steps-list li {
             color: #b8b8b8;
             margin-bottom: 15px;
@@ -167,7 +195,7 @@
             position: relative;
             font-size: 1.1rem;
         }
-        
+
         .steps-list li::before {
             content: '✨';
             position: absolute;
@@ -175,40 +203,49 @@
             font-size: 1.2rem;
             animation: twinkle 2s ease-in-out infinite;
         }
-        
+
         .steps-list li:nth-child(2)::before {
             animation-delay: 0.5s;
         }
-        
+
         .steps-list li:nth-child(3)::before {
             animation-delay: 1s;
         }
-        
+
         @keyframes twinkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
         }
-        
+
         .social-share {
             margin: 40px 0;
             position: relative;
             z-index: 1;
         }
-        
+
         .social-share h4 {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 20px;
             color: #ffffff;
         }
-        
+
         .share-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
+
         .share-btn {
             display: inline-flex;
             align-items: center;
@@ -221,27 +258,27 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .share-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-        
+
         .twitter {
             background: linear-gradient(45deg, #1da1f2, #0d8bd9);
             color: white;
         }
-        
+
         .linkedin {
             background: linear-gradient(45deg, #0077b5, #005885);
             color: white;
         }
-        
+
         .facebook {
             background: linear-gradient(45deg, #1877f2, #166fe5);
             color: white;
         }
-        
+
         .back-home {
             display: inline-block;
             background: linear-gradient(45deg, #00f5ff, #ff006e);
@@ -256,12 +293,12 @@
             z-index: 1;
             margin-top: 20px;
         }
-        
+
         .back-home:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 245, 255, 0.4);
         }
-        
+
         /* Progress indicator */
         .progress-indicator {
             position: fixed;
@@ -278,12 +315,19 @@
             animation: pulse 2s infinite;
             z-index: 100;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
-        
+
         /* Footer */
         footer {
             padding: 30px 0;
@@ -291,37 +335,37 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(0, 0, 0, 0.3);
         }
-        
+
         footer p {
             color: #888;
             font-size: 14px;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .thank-you-card {
                 padding: 40px 30px;
                 margin: 0 15px;
             }
-            
+
             .thank-you-card h1 {
                 font-size: 2.2rem;
             }
-            
+
             .thank-you-card p {
                 font-size: 1.1rem;
             }
-            
+
             .share-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .share-btn {
                 width: 200px;
                 justify-content: center;
             }
-            
+
             .progress-indicator {
                 bottom: 20px;
                 right: 20px;
@@ -330,22 +374,23 @@
                 font-size: 20px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .thank-you-card h1 {
                 font-size: 1.8rem;
             }
-            
+
             .next-steps {
                 padding: 20px;
             }
-            
+
             .container {
                 padding: 0 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -361,8 +406,9 @@
             <div class="thank-you-card">
                 <div class="success-icon">🎉</div>
                 <h1>Welcome to the Revolution!</h1>
-                <p>Thank you for joining the <span class="highlight-text">PromptExchange</span> waitlist. You're now part of an exclusive group that will shape the future of content creation.</p>
-                
+                <p>Thank you for joining the <span class="highlight-text">PromptExchange</span> waitlist. You're now
+                    part of an exclusive group that will shape the future of content creation.</p>
+
                 <div class="next-steps">
                     <h3>What happens next?</h3>
                     <ul class="steps-list">
@@ -371,12 +417,12 @@
                         <li>You'll get <strong>exclusive early access</strong> when we launch</li>
                     </ul>
                 </div>
-                
+
                 <a href="/" class="back-home">Back to Home</a>
             </div>
         </div>
     </main>
-    
+
     <div class="progress-indicator">
         ✓
     </div>
@@ -389,22 +435,22 @@
 
     <script>
         // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Animate the success icon on load
             const successIcon = document.querySelector('.success-icon');
             setTimeout(() => {
                 successIcon.style.animation = 'bounce 2s ease-in-out infinite';
             }, 500);
-            
+
             // Track social shares (you can integrate with analytics)
             document.querySelectorAll('.share-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const platform = this.classList[1];
                     console.log(`Shared on ${platform}`);
                     // Add your analytics tracking here
                 });
             });
-            
+
             // Auto-redirect after 60 seconds (optional)
             // setTimeout(() => {
             //     window.location.href = '/';
@@ -412,4 +458,5 @@
         });
     </script>
 </body>
+
 </html>
